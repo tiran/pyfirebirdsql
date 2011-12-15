@@ -148,6 +148,8 @@ def params_to_blr(params):
         elif p == None:
             v = bytes([0]) * 8
             blr += bytes([9, 0])
+        else:
+            raise TypeError(t)
         values += v
         blr += bytes([7, 0])
         values += bytes([0]) * 4 if p != None else bytes([0xff,0xff,0x34,0x8c])
